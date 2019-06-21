@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+</head>
+
+<style type="text/css">
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .main {
+        text-align: center
+    }
+    
+    .btn {
+        display: inline-block;
+        width: 60%;
+        height: 50px;
+        line-height: 50px;
+        border-radius: 10px;
+        background-color: #1E8AFF;
+        color: white;
+        font-size: 20px;
+        box-shadow: 0 0 15px #41b3fc;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <div class="main">
+        <a class="btn method1">method1</a>
+        <a class="btn method2">method2</a>
+        <a class="btn method3">method3</a>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+<script type="text/javascript" src="EasyJSBridge.js"></script>
+<script type="text/javascript">
+    var methods = ["method1", "method2", "method3"];
+    var easyJSBridge = EasyJSBridge.create("android", "ios", methods);
+
+    $(".method1").click(function() {
+        easyJSBridge.method1("parameter1", function(data1, data2) {
+
+        })
+    });
+
+    $(".method2").click(function() {
+        easyJSBridge.method2("parameter1", 2)
+    });
+    $(".method3").click(function() {
+        easyJSBridge.method3("androidParameter1", 2, ["iosParameter1", 2, "3"])
+    });
+</script>
+
+</html>

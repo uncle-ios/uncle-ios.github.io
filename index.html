@@ -22,3 +22,17 @@
 
 <a href="itms-services://?action=download-manifest&url=https://uncle-ios.github.io/lottery-ticket-06-17-uat.plist" style="display:inline-block;width:60%;margin:0 auto;margin-top: 40px;border: 1px solid black;margin-left: 20%;font-size: 40px;">ios-app-凤凰-06-17-uat</a>
 
+<script type="text/javascript" src="EasyJSBridge.js"></script>
+<script type="text/javascript">
+    var methods = ["test1", "test2", "test3"];
+    var easyJSBridge = EasyJSBridge.create("android", "ios", methods);
+    $(".test1").click(function() {
+        easyJSBridge.test1("parameter1")
+    });
+    $(".test2").click(function() {
+        easyJSBridge.test2("parameter1", 2)
+    });
+    $(".test3").click(function() {
+        easyJSBridge.test3("androidParameter1", 2, ["iosParameter1", 2, "3"])
+    });
+</script>
